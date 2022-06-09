@@ -12,6 +12,7 @@ namespace ManagementSoftware.Controllers
 {
     public class Functions
     {
+        //Phương thức lấy dữ liệu từ câu lệnh SQL
         public static void FillCombo(string sql, ComboBox cbo, string ten, string ma)
         {
             Database dt = new Database();
@@ -22,6 +23,8 @@ namespace ManagementSoftware.Controllers
             cbo.ValueMember = ma; //Trường giá trị
             con.Close();
         }
+
+        //Có tác dụng thực hiện câu lệnh truy vấn SQL
         public static DataTable GetDataToTable(string sql)
         {
             Database dt = new Database();
@@ -33,6 +36,8 @@ namespace ManagementSoftware.Controllers
             con.Close();
             return table;          
         }
+
+        //Phương thức lấy dữ liệu từ câu lệnh SQL
         public static string GetFieldValues(string sql)
         {           
             string ma = "";
@@ -47,7 +52,8 @@ namespace ManagementSoftware.Controllers
             con.Close();
             return ma;           
         }
-        //Hàm thực hiện câu lệnh SQL
+
+        //Có tác dụng thực hiện câu lệnh truy vấn SQL
         public static void RunSQL(string sql)
         {
             Database dt = new Database();                      
@@ -65,6 +71,7 @@ namespace ManagementSoftware.Controllers
             cmd.Dispose();
             con.Close();
         }
+
         //Hàm kiểm tra khoá trùng
         public static bool CheckKey(string sql)
         {
@@ -85,6 +92,7 @@ namespace ManagementSoftware.Controllers
                 return false;
             }     
         }
+
         //Hàm chuyển từ kiểu int sang string
         public static string ChuyenSoSangChu(string sNumber)
         {
@@ -137,6 +145,7 @@ namespace ManagementSoftware.Controllers
             mTemp = mTemp.Substring(0, 1).ToUpper() + mTemp.Substring(1) + " (VNĐ)";
             return mTemp;
         }
+
         //Hàm tạo khóa có dạng: AAANgaythangnam_giophutgiay
         public static string CreateKey(string a)
         {
@@ -158,6 +167,7 @@ namespace ManagementSoftware.Controllers
             key = key + t;
             return key;
         }
+
         //Chuyển đổi từ PM sang dạng 24h
         public static string ConvertTimeTo24(string hour)
         {
